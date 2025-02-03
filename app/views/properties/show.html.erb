@@ -1,0 +1,6 @@
+<h2>Property Details</h2>
+<p><strong>Title:</strong> <%= @property.title %></p>
+<p><strong>Address:</strong> <%= @property.address %></p>
+<p><strong>Price:</strong> <%= number_to_currency(@property.price) %></p>
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back to Properties', properties_path %>

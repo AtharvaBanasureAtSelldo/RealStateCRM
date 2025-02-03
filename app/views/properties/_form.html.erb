@@ -1,0 +1,32 @@
+<%= form_with(model: @property, local: true) do |form| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+      <ul>
+        <% @property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+  <div>
+    <%= form.label :agent_id, "Agent" %>
+    <%= form.collection_select :agent_id, User.where(role: "agent"), :id, :name, prompt: "Select Agent" %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

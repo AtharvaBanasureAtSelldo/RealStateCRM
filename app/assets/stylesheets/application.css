@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Header styling */
+header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none; 
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main container styling */
+main {
+  padding: 20px;
+}
+
+/* Table styling for properties */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Button styling */
+a, button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+a:hover, button:hover {
+  background-color: #0056b3;
+}
+
+/* Flash messages styling */
+.notice {
+  color: green;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid green;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.alert {
+  color: red;
+  padding: 10px;
+  background-color: #f8d7da;
+  border: 1px solid red;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* Footer styling */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+}
