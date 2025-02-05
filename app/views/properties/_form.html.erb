@@ -1,4 +1,4 @@
-<%= form_with(model: @property, local: true) do |form| %>
+<%= form_with(model: @property, local: true, html: { class: "property-form" }) do |form| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -10,23 +10,44 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
-  <div>
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+
+  <div class="form-group">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
-  <div>
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+
+  <div class="form-group">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
-  <div>
-    <%= form.label :agent_id, "Agent" %>
-    <%= form.collection_select :agent_id, User.where(role: "agent"), :id, :name, prompt: "Select Agent" %>
+
+  <div class="form-group">
+    <%= form.label :tags, "Select Tags", class: "form-label" %>
+    <div class="tags-container">
+      <% Tag.all.each do |tag| %>
+        <label class="tag-label">
+          <%= check_box_tag "property[tag_ids][]", tag.id, @property.tag_ids.include?(tag.id), class: "tag-checkbox" %>
+          <span class="tag-name"><%= tag.name %></span>
+        </label>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= form.submit %>
+  
+
+  <div class="form-group">
+    <%= form.label :agent_id, "Agent", class: "form-label" %>
+    <%= form.collection_select :agent_id, User.where(role: "agent"), :id, :name, { prompt: "Select Agent" }, { class: "form-control" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Save Property", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+
+
+

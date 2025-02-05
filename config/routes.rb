@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "error/index"
+  root "welcome#index"
   resources :properties
   resources :appointments
   resources :transactions
@@ -21,4 +23,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Catch-all route (should be placed last)
+  match '*path', to: 'application#not_found', via: :all
+
 end

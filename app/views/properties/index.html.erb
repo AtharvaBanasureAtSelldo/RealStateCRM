@@ -15,9 +15,9 @@
         <td><%= property.address %></td>
         <td><%= number_to_currency(property.price,unit: "Rs ", precision: 0) %></td>
         <td>
-          <%= link_to 'Show', property_path(property) %> |
-          <%= link_to 'Edit', edit_property_path(property) %> |
-          <%= link_to 'Delete', property_path(property), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', property_path(property),class: "btn action-btn" %> |
+          <%= link_to 'Edit', edit_property_path(property), class: "btn action-btn" %> |
+          <%= link_to 'Delete', property_path(property), method: :delete, data: { confirm: 'Are you sure?', turbo_method: :delete}, class: "btn action-btn" %>
         </td>
       </tr>
     <% end %>

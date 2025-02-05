@@ -109,3 +109,142 @@ footer {
   height: 40px;
   width: 100%;
 }
+
+.action-btn {
+  margin-right: 10px; /* Adds 10px space to the right of each button */
+}
+
+/* Optionally, you can style the buttons more */
+.btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+/* Style for the property form */
+.property-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.property-form .form-group {
+  margin-bottom: 15px;
+}
+
+.property-form .form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.property-form .form-control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.property-form .form-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Example button colors */
+.btn:first-of-type { background-color: #007bff; } /* Show */
+.btn:nth-of-type(2) { background-color: #28a745; } /* Edit */
+.btn:last-of-type { background-color: #dc3545; }  /* Delete */
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-label {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tag-label:hover {
+  background: #e9ecef;
+}
+
+.tag-checkbox {
+  margin-right: 8px;
+}
+
+.tag-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+.transaction-form,
+.appointment-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
