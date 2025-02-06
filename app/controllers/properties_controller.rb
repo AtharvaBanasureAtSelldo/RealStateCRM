@@ -1,4 +1,8 @@
 class PropertiesController < ApplicationController
+  # def test
+  #   puts "++++++((((((((HELLLO))))))))++++++++"
+  # end
+  
   def index
     @properties=Property.all
   end

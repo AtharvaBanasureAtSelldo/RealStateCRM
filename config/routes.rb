@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   resources :properties
   resources :appointments
   resources :transactions
-  get "properties/index"
-  get "properties/show"
-  get "properties/new"
-  get "properties/create"
-  get "properties/edit"
-  get "properties/update"
-  get "properties/destroy"
+
+  # namespace :admin do
+  #   resources :student
+  # end
+
+  scope module: :admin do
+    resources :student
+  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
