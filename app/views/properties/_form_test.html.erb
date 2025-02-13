@@ -1,0 +1,29 @@
+<h1>Form Test</h1>
+
+<%= form_with(model: @property, local: true) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <%#= form.collection_check_boxes :property_id, Property.all, :id, :name_with_initial %>
+  <%= form.date_field :born_on %>
+  <%= form.datetime_local_field :graduation_day %>
+  <%= form.email_field :address %>
+<%= form.time_field :started_at %>
+  <%= form.button %>
+  <strong>Ask me!</strong>
+  <div>
+    <%= form.label :paid %>
+    <%= form.check_box :paid %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Save Property", class: "btn btn-primary" %>
+  </div>
+<% end %>

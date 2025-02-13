@@ -1,29 +1,14 @@
-<%= form_with(model: @property, local: true, html: { class: "property-form" }) do |form| %>
-  <% if @property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
-      <ul>
-        <% @property.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<% if @property.errors.any? %>
+  <h1>ERRROROROROR</h1>
+  <% @property.errors.full_messages.each do |message| %>
+    <h2><%= message %></h2>
   <% end %>
+<% end %>
 
-  <div class="form-group">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :address, class: "form-label" %>
-    <%= form.text_field :address, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :price, class: "form-label" %>
-    <%= form.number_field :price, class: "form-control" %>
-  </div>
+<%= form_with(model: @property, local: true,builder: LabeledFormBuilder, html: { class: "property-form" }) do |form| %>
+  <%= form.text_field :title, label:"Title" ,class: "form-control" %>
+  <%= form.text_field :address, class: "form-control" %>
+  <%= form.number_field :price, class: "form-control" %>
 
   <div class="form-group">
     <%= form.label :tags, "Select Tags", class: "form-label" %>
@@ -41,6 +26,11 @@
   <div class="form-group">
     <%= form.label :agent_id, "Agent", class: "form-label" %>
     <%= form.collection_select :agent_id, User.where(role: "agent"), :id, :name, { prompt: "Select Agent" }, { class: "form-control" } %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="form-actions">

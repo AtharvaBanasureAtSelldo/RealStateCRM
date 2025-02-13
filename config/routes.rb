@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get "error/index"
   root "welcome#index"
-  resources :properties
+  get "properties/test" =>   "properties#test"
+  get "properties/form_test" => "properties#form_test"
+  
+  resources :properties, path: 'products'
   resources :appointments
   resources :transactions
 

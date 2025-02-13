@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_03_045633) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_07_111959) do
   create_table "appointments", force: :cascade do |t|
     t.datetime "date"
     t.integer "user_id"
@@ -34,8 +34,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_03_045633) do
     t.integer "agent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
-
+x
   create_table "property_tags", force: :cascade do |t|
     t.integer "property_id", null: false
     t.integer "tag_id", null: false

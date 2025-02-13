@@ -2,5 +2,12 @@
 <p><strong>Title:</strong> <%= @property.title %></p>
 <p><strong>Address:</strong> <%= @property.address %></p>
 <p><strong>Price:</strong> <%= number_to_currency(@property.price) %></p>
+
+<% if @property.image.present? %>
+  <img src="<%= @property.image.url %>" alt="Property Image">
+<% else %>
+  <p>No image available</p>
+<% end %>
+
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back to Properties', properties_path %>
